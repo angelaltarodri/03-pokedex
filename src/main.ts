@@ -10,6 +10,10 @@ async function bootstrap() {
       whitelist: true,
       // "property banana should not exist"
       forbidNonWhitelisted: true,
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
     }),
   );
   app.setGlobalPrefix('api/v2');
