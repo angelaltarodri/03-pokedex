@@ -8,7 +8,7 @@ async function bootstrap() {
     new ValidationPipe({
       // white list solo deja que la data necesaria sea ingresada, SOLO la necesaria
       whitelist: true,
-      // "property banana should not exist"
+      // "property banana should not exist".
       forbidNonWhitelisted: true,
       transform: true,
       transformOptions: {
@@ -17,6 +17,7 @@ async function bootstrap() {
     }),
   );
   app.setGlobalPrefix('api/v2');
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
+  console.log(`App running on port ${process.env.PORT}`);
 }
 bootstrap();
